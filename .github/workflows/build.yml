@@ -1,0 +1,16 @@
+name: Build
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install LaTeX
+      run: |
+        sudo apt install texlive-latex-base
+    - name: Make Doc
+      run: |
+        make
