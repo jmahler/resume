@@ -14,3 +14,8 @@ jobs:
     - name: Make Doc
       run: |
         make
+    - name: Upload PDFs
+      uses: actions/upload-artifact@v2
+      with:
+        name: linux-packaging
+        path: linux-packaging.pdf
