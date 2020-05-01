@@ -8,12 +8,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Install LaTeX
-      run: |
-        sudo apt install texlive-latex-base
     - name: Make Doc
-      run: |
-        make
+      uses: xu-cheng/latex-action@master
+      with:
+        root_file: linux-packaging.tex
     - name: Upload PDFs
       uses: actions/upload-artifact@v2
       with:
